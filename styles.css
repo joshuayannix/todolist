@@ -68,7 +68,8 @@ form button:hover {
   flex: 1;
 }
 
-.trash-btn, 
+.trash-btn,
+.edit-btn,
 .complete-btn{
   color: white;
   border: none;
@@ -82,18 +83,19 @@ form button:hover {
   background: rgb(38, 216, 38);
 }
 
-.complete-btn:hover {
+.complete-btn:hover,
+.edit-btn:hover,
+.trash-btn:hover {
   transform: scale(1.2);
   cursor: pointer;
+}
+
+.edit-btn{
+  background: orange;
 }
 
 .trash-btn{
   background: red;
-}
-
-.trash-btn:hover {
-  transform: scale(1.2);
-  cursor: pointer;
 }
 
 .todo-item{
@@ -101,6 +103,7 @@ form button:hover {
 }
 
 .fa-trash,
+.fa-edit,
 .fa-check{
   pointer-events: none;
 }

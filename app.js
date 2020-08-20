@@ -101,7 +101,7 @@ function getTodos() {
   } else {
     todos = JSON.parse(localStorage.getItem('todos'));
   }
-  console.log(todos)
+  
   todos.forEach(function (todo) {
     // create Todo DIV
     const todoDiv = document.createElement('div');
@@ -116,6 +116,11 @@ function getTodos() {
     completedButton.innerHTML = '<i class="fas fa-check"></i>';
     completedButton.classList.add('complete-btn');
     todoDiv.appendChild(completedButton)
+    // Create Edit button
+    const editButton = document.createElement('button');
+    editButton.innerHTML = '<i class="fas fa-edit"></i>';
+    editButton.classList.add('edit-btn')
+    todoDiv.appendChild(editButton)
     // add trash button
     const trashButton = document.createElement('button');
     trashButton.innerHTML = '<i class="fas fa-trash"></i>';
@@ -133,10 +138,9 @@ function removeLocalTodos(todo) {
   } else {
     todos = JSON.parse(localStorage.getItem('todos'));
   }
-  console.log(todo)
-  console.log(todo.children[0].innerText)
+ 
   const todoText = todo.children[0].innerText;
-  console.log(todos.indexOf(todoText))
+
   todos.splice(todos.indexOf(todoText), 1)
   localStorage.setItem('todos', JSON.stringify(todos));
 }
